@@ -7,9 +7,9 @@ const currencyExchangeSlice = createSlice({
   name: "currencyExchange",
   initialState,
   extraReducers: {
-    [method.fulfilled]: (state, action) => {},
-    [method.pending]: (state) => {},
-    [method.rejected]: (state) => {},
+    // [method.fulfilled]: (state, action) => {},
+    // [method.pending]: (state) => {},
+    // [method.rejected]: (state) => {},
   },
 });
-export default currencyExchangeSlice;
+export default currencyExchangeSlice.reducer;

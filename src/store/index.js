@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import currencyExchangeReducer from "./reducers/currencyExchange";
-const store = configureStore({
+
+export const store = configureStore({
   reducer: {
     currencyExchange: currencyExchangeReducer,
   },
