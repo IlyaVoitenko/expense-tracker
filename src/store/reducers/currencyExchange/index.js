@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { setCurrencyExchange } from "../../thunk";
+import { setCurrencyExchangeList } from "../../thunk";
 
 const initialState = {
-  currencyExchange: null,
+  currencyExchangeList: null,
   isLoading: false,
 };
 
@@ -10,14 +10,14 @@ const currencyExchangeSlice = createSlice({
   name: "currencyExchange",
   initialState,
   extraReducers: {
-    [setCurrencyExchange.fulfilled]: (state, action) => {
-      state.currencyExchange = action.payload;
+    [setCurrencyExchangeList.fulfilled]: (state, action) => {
+      state.currencyExchangeList = action.payload;
       state.isLoading = false;
     },
-    [setCurrencyExchange.pending]: (state) => {
+    [setCurrencyExchangeList.pending]: (state) => {
       state.isLoading = true;
     },
-    [setCurrencyExchange.rejected]: (state) => {
+    [setCurrencyExchangeList.rejected]: (state) => {
       state.isLoading = false;
     },
   },
