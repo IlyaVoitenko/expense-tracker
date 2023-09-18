@@ -7,7 +7,7 @@ import {
   formatterСurrencyValue,
   formatterСurrencyName,
 } from "../../utils/helpers";
-import style from "./style";
+import styles from "./Styles";
 
 const CurrencyExchange = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ const CurrencyExchange = () => {
   const currencyValue = formatterСurrencyValue(currencyExchange?.JPY);
   const currencyName = formatterСurrencyName(currencyExchange);
   return (
-    <View style={style.container}>
+    <View style={styles.container}>
       <Text>
         USD 1 / {currencyName} {currencyValue}{" "}
       </Text>

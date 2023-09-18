@@ -8,6 +8,6 @@ export const formatterСurrencyValue = (value) => {
   return;
 };
 export const formatterСurrencyName = (value) => {
-  if (value) Object.keys(value)[0];
+  if (value) return Object.keys(value)[0];
   return;
 };
