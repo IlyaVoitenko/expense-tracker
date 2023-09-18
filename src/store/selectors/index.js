@@ -1,3 +1,3 @@
 export const currencyExchangeListSelectors = (state) =>
-  state.currencyExchange.currencyExchangeList;
+  state.currencyExchange.currencyExchange;
 export const isLoadingSelectors = (state) => state.currencyExchange.isLoading;

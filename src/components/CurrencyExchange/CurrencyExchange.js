@@ -2,24 +2,27 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Text, View } from "react-native";
 import { currencyExchangeListSelectors } from "../../store/selectors";
-import { setCurrencyExchangeList } from "../../store/thunk";
-import { formatterСurrency } from "../../utils/helpers";
-import style from "./style";
+import { setCurrencyExchange } from "../../store/thunk";
+import {
+  formatterСurrencyValue,
+  formatterСurrencyName,
+} from "../../utils/helpers";
 
 const CurrencyExchange = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
-    dispatch(setCurrencyExchangeList());
+    dispatch(setCurrencyExchange());
   }, []);
-  const currencyExchangeList = useSelector(currencyExchangeListSelectors);
-  const { buy, sale, ccy } = currencyExchangeList[1];
-  const saleUSD = formatterСurrency(sale);
-  const buyUSD = formatterСurrency(buy);
+
+  const currencyExchange = useSelector(currencyExchangeListSelectors);
+  const currencyValue = formatterСurrencyValue(currencyExchange?.JPY);
+  const currencyName = formatterСurrencyName(currencyExchange);
 
   return (
-    <View style={style.container}>
+    <View>
       <Text>
-        {ccy} {saleUSD} / {buyUSD}
+        {currencyName} / {currencyValue}
       </Text>
     </View>
   );

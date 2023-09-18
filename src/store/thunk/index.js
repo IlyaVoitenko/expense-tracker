@@ -1,13 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { getPrivatBankCurrencyExchange } from "../../services/api";
 
-export const setCurrencyExchangeList = createAsyncThunk(
-  "currencyExchange/setCurrencyExchangeList",
+export const setCurrencyExchange = createAsyncThunk(
+  "currencyExchange/setCurrencyExchange",
   async (_, apiThunk) => {
     try {
-      console.log("started");
-      const data = await getPrivatBankCurrencyExchange();
-      console.log("after :", data);
+      const { data } = await getPrivatBankCurrencyExchange();
       return data;
     } catch (error) {
       apiThunk.rejectWithValue(error.message);
