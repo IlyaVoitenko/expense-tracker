@@ -12,8 +12,6 @@ const currencyExchangeSlice = createSlice({
     [setCurrencyExchange.fulfilled]: (state, action) => {
       state.currencyExchange = action.payload;
     },
-    [setCurrencyExchange.pending]: (state) => {},
-    [setCurrencyExchange.rejected]: (state) => {},
   },
 });
 export default currencyExchangeSlice.reducer;
