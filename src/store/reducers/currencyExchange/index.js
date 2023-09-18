@@ -3,7 +3,6 @@ import { setCurrencyExchange } from "../../thunk";
 
 const initialState = {
   currencyExchange: null,
-  isLoading: false,
 };
 
 const currencyExchangeSlice = createSlice({
@@ -12,14 +11,9 @@ const currencyExchangeSlice = createSlice({
   extraReducers: {
     [setCurrencyExchange.fulfilled]: (state, action) => {
       state.currencyExchange = action.payload;
-      state.isLoading = false;
     },
-    [setCurrencyExchange.pending]: (state) => {
-      state.isLoading = true;
-    },
-    [setCurrencyExchange.rejected]: (state) => {
-      state.isLoading = false;
-    },
+    [setCurrencyExchange.pending]: (state) => {},
+    [setCurrencyExchange.rejected]: (state) => {},
   },
 });
 export default currencyExchangeSlice.reducer;
