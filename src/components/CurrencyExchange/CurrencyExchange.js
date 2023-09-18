@@ -3,7 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Text, View } from "react-native";
 import { currencyExchangeListSelectors } from "../../store/selectors";
 import { setCurrencyExchange } from "../../store/thunk";
-import { formatterСurrencyValue } from "../../utils/helpers";
+import {
+  formatterСurrencyValue,
+  formatterСurrencyName,
+} from "../../utils/helpers";
 import style from "./style";
 
 const CurrencyExchange = () => {
@@ -15,8 +18,7 @@ const CurrencyExchange = () => {
 
   const currencyExchange = useSelector(currencyExchangeListSelectors);
   const currencyValue = formatterСurrencyValue(currencyExchange?.JPY);
-  const currencyName = Object.keys(currencyExchange)[0];
-
+  const currencyName = formatterСurrencyName(currencyExchange);
   return (
     <View style={style.container}>
       <Text>
