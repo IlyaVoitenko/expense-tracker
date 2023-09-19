@@ -1,16 +1,24 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { View } from "react-native";
 import { useSelector } from "react-redux";
-import { walletSelectors } from "../../store/selectors";
+import { userBalanceListSelectors } from "../../store/selectors";
 import { styles } from "./Styles";
 
 import ItemUserBalance from "./ItemUserBalance";
 
 const UserBalance = () => {
-  const wallet = useSelector(walletSelectors);
+  const userBalanceList = useSelector(userBalanceListSelectors);
   return (
     <View style={styles.container}>
-      <ItemUserBalance title={"Wallet"} money={wallet} icon={"cd"} />
+      {userBalanceList.map((item) => {
+        return (
+          <ItemUserBalance
+            key={item.id}
+            title={item.title}
+            summa={item.summa}
+          />
+        );
+      })}
     </View>
   );
 };

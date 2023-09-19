@@ -1,8 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import { userBalanceList } from "../../../utils/arrayUserBalance";
 const initialState = {
-  wallet: 0,
-  bankAccount: 0,
+  userBalanceList: [...userBalanceList],
 };
 
 const userBalance = createSlice({
