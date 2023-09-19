@@ -10,6 +10,11 @@
   },
   "dependencies": {
     "@expo/webpack-config": "^19.0.0",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-native-fontawesome": "^0.3.0",
+    "@mdi/js": "^7.2.96",
+    "@mdi/react": "^1.6.1",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.5.0",
     "dotenv": "^16.3.1",
@@ -18,9 +23,10 @@
     "nanoid": "^5.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.11.0",
     "react-native": "^0.72.4",
     "react-native-get-random-values": "^1.9.0",
+    "react-native-svg": "^13.13.0",
+    "react-native-vector-icons": "^10.0.0",
     "react-native-web": "~0.19.6",
     "react-redux": "^8.1.2",
     "yarn": "^1.22.19"
