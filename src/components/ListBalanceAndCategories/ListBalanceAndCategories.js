@@ -3,7 +3,7 @@ import React from "react";
 import { styles } from "./Styles";
 import ItemUserBalance from "../ListBalanceAndCategories/ItemBalanceAndCategories";
 
-const ListBalanceAndCategories = ({ List }) => {
+const ListBalanceAndCategories = ({ List, nameList }) => {
   return (
     <View style={styles.container}>
       {List.map((item) => {
@@ -12,6 +12,9 @@ const ListBalanceAndCategories = ({ List }) => {
             key={item.id}
             title={item.title}
             summa={item.summa}
+            list={List}
+            idItem={item.id}
+            nameList={nameList}
           />
         );
       })}

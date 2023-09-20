@@ -2,19 +2,27 @@ import { createSlice } from "@reduxjs/toolkit";
 import { userBalanceList } from "../../../utils/arrayUserBalance";
 const initialState = {
   userBalanceList: [...userBalanceList],
+  indexSelectedItem: null,
 };
 
 const userBalance = createSlice({
   name: "userBalance",
   initialState,
   reducers: {
-    setWallet: (state, action) => {
-      state.wallet += action.payload;
+    setIndexSelectedItemBalance: (state, action) => {
+      state.indexSelectedItem = action.payload;
     },
-    setBankAccount: (state, action) => {
-      state.bankAccount += action.payload;
+    setAddBalance: (state, action) => {
+      state.userBalanceList[indexSelectedItem].summa += action.payload;
+    },
+    setSubtractBalance: (state, action) => {
+      state.userBalanceList[indexSelectedItem].summa += action.payload;
     },
   },
 });
-export const { setWallet, setBankAccount } = userBalance.actions;
+export const {
+  setAddBalance,
+  setSubtractBalance,
+  setIndexSelectedItemBalance,
+} = userBalance.actions;
 export default userBalance.reducer;

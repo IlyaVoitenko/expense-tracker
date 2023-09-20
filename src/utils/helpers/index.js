@@ -100,3 +100,14 @@ export const filterStyleBtn = (title) => {
       return { color: "#3564b6" };
   }
 };
+export const handleEdit = (list, idItem, nameList, dispatch) => {
+  const index = list.findIndex((item) => item.id === idItem);
+  switch (nameList) {
+    case "categories":
+      break;
+    case "userBalance":
+      break;
+    default:
+      break;
+  }
+};

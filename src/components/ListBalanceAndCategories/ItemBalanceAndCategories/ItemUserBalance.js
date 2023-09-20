@@ -1,18 +1,28 @@
-import { Text, View } from "react-native";
-import { filterIconBtn, filterStyleBtn } from "../../../utils/helpers";
 import React from "react";
+import { Text, View, TouchableOpacity } from "react-native";
+import {
+  filterIconBtn,
+  filterStyleBtn,
+  handleEdit,
+} from "../../../utils/helpers";
+import { useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { styles } from "./Styles";
 
-const ItemBalanceAndCategories = ({ title, summa }) => {
+const ItemBalanceAndCategories = ({ idItem, title, summa, list, nameList }) => {
+  const dispatch = useDispatch();
   const icon = filterIconBtn(title);
   const styleIcon = filterStyleBtn(title);
   return (
-    <View style={styles.itemContainer}>
-      <Text style={styles.itemTitle}>{title}</Text>
-      <FontAwesomeIcon icon={icon} size={30} style={styleIcon} />
-      <Text style={styles.itemSumma}>{summa}</Text>
-    </View>
+    <TouchableOpacity
+      onPress={() => handleEdit(list, idItem, nameList, dispatch)}
+    >
+      <View style={styles.itemContainer}>
+        <Text style={styles.itemTitle}>{title}</Text>
+        <FontAwesomeIcon icon={icon} size={35} style={styleIcon} />
+        <Text style={styles.itemSumma}>{summa}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 

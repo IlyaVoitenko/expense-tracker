@@ -8,7 +8,7 @@ const Categories = () => {
   const categoriesList = useSelector(categoriesListSelectors);
   return (
     <View>
-      <ListBalanceAndCategories List={categoriesList} />
+      <ListBalanceAndCategories List={categoriesList} nameList={"categories"} />
     </View>
   );
 };

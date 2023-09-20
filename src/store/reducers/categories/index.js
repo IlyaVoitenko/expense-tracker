@@ -3,12 +3,27 @@ import { categoriesList } from "../../../utils/arrayCategories";
 
 const initialState = {
   categoriesList: [...categoriesList],
+  indexSelectedItem: null,
 };
 
 const categories = createSlice({
   name: "categories",
   initialState,
-  reducers: {},
+  reducers: {
+    setIndexSelectedItemCategories: (state, action) => {
+      state.indexSelectedItem = action.payload;
+    },
+    setAddBalanceCategorie: (state, action) => {
+      state.categoriesList[indexSelectedItem].summa += action.payload;
+    },
+    setSubtractBalanceCategorie: (state, action) => {
+      state.categoriesList[indexSelectedItem].summa += action.payload;
+    },
+  },
 });
-export const {} = categories.actions;
+export const {
+  setIndexSelectedItemCategories,
+  setAddBalanceCategorie,
+  setSubtractBalanceCategorie,
+} = categories.actions;
 export default categories.reducer;

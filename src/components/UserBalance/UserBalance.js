@@ -9,7 +9,10 @@ const UserBalance = () => {
   const userBalanceList = useSelector(userBalanceListSelectors);
   return (
     <View style={styles.container}>
-      <ListBalanceAndCategories List={userBalanceList} />
+      <ListBalanceAndCategories
+        List={userBalanceList}
+        nameList={"userBalance"}
+      />
     </View>
   );
 };
