@@ -1,10 +1,10 @@
 import { Text, View } from "react-native";
-import { filterIconBtn, filterStyleBtn } from "../../../utils/arrayUserBalance";
+import { filterIconBtn, filterStyleBtn } from "../../../utils/helpers";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { styles } from "./Styles";
 
-const ItemUserBalance = ({ title, summa }) => {
+const ItemBalanceAndCategories = ({ title, summa }) => {
   const icon = filterIconBtn(title);
   const styleIcon = filterStyleBtn(title);
   return (
@@ -16,4 +16,4 @@ const ItemUserBalance = ({ title, summa }) => {
   );
 };
 
-export default ItemUserBalance;
+export default ItemBalanceAndCategories;
