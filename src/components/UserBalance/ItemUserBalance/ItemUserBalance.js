@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { filterIconBtn, filterStyleBtn } from "../../../utils/arrayUserBalance";
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
+import { styles } from "./Styles";
 
 const ItemUserBalance = ({ title, summa }) => {
   const icon = filterIconBtn(title);
@@ -16,19 +17,3 @@ const ItemUserBalance = ({ title, summa }) => {
 };
 
 export default ItemUserBalance;
-
-const styles = StyleSheet.create({
-  itemContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 15,
-    width: 100,
-    height: 80,
-  },
-  itemSumma: {
-    padding: 10,
-  },
-  itemTitle: {
-    paddingBottom: 5,
-  },
-});
