@@ -1,15 +1,11 @@
 import React from "react";
 import { View } from "react-native";
-import CurrencyExchange from "../CurrencyExchange/CurrencyExchange";
-import UserBalance from "../UserBalance";
-import Categories from "../Categories";
+import Common from "../Сommon";
 
 const Main = () => {
   return (
     <View>
-      <CurrencyExchange />
-      <UserBalance />
-      <Categories />
+      <Common />
     </View>
   );
 };
