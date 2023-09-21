@@ -4,11 +4,15 @@ import { useSelector } from "react-redux";
 import { categoriesListSelectors } from "../../store/selectors";
 import ListBalanceAndCategories from "../ListBalanceAndCategories/ListBalanceAndCategories";
 
-const Categories = () => {
+const Categories = ({ navigation }) => {
   const categoriesList = useSelector(categoriesListSelectors);
   return (
     <View>
-      <ListBalanceAndCategories List={categoriesList} nameList={"categories"} />
+      <ListBalanceAndCategories
+        navigation={navigation}
+        List={categoriesList}
+        nameList={"categories"}
+      />
     </View>
   );
 };

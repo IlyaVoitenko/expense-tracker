@@ -4,12 +4,12 @@ import CurrencyExchange from "../CurrencyExchange/CurrencyExchange";
 import UserBalance from "../UserBalance";
 import Categories from "../Categories";
 
-const Common = () => {
+const Common = ({ navigation }) => {
   return (
     <View>
       <CurrencyExchange />
-      <UserBalance />
-      <Categories />
+      <UserBalance navigation={navigation} />
+      <Categories navigation={navigation} />
     </View>
   );
 };

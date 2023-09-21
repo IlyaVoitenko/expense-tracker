@@ -10,14 +10,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { styles } from "./Styles";
 
-const ItemBalanceAndCategories = ({ idItem, title, summa, list, nameList }) => {
+const ItemBalanceAndCategories = ({
+  idItem,
+  title,
+  summa,
+  list,
+  nameList,
+  navigation,
+}) => {
   const dispatch = useDispatch();
   const icon = filterIconBtn(title);
   const styleIcon = filterStyleBtn(title);
 
   return (
     <TouchableOpacity
-      onPress={() => handleEdit(list, idItem, nameList, dispatch)}
+      onPress={() => {
+        navigation.navigate("Item");
+        handleEdit(list, idItem, nameList, dispatch);
+      }}
     >
       <View style={styles.itemContainer}>
         <Text style={styles.itemTitle}>{title}</Text>

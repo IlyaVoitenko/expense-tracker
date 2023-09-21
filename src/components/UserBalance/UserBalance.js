@@ -5,12 +5,13 @@ import { userBalanceListSelectors } from "../../store/selectors";
 import ListBalanceAndCategories from "../ListBalanceAndCategories/ListBalanceAndCategories";
 import { styles } from "./Styles";
 
-const UserBalance = () => {
+const UserBalance = ({ navigation }) => {
   const userBalanceList = useSelector(userBalanceListSelectors);
   return (
     <View style={styles.container}>
       <ListBalanceAndCategories
         List={userBalanceList}
+        navigation={navigation}
         nameList={"userBalance"}
       />
     </View>
