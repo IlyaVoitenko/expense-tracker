@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 import {
   filterIconBtn,
   filterStyleBtn,
   handleEdit,
 } from "../../../utils/helpers";
-import { useDispatch } from "react-redux";
+
+import { useDispatch, useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { styles } from "./Styles";
 
@@ -13,6 +14,7 @@ const ItemBalanceAndCategories = ({ idItem, title, summa, list, nameList }) => {
   const dispatch = useDispatch();
   const icon = filterIconBtn(title);
   const styleIcon = filterStyleBtn(title);
+
   return (
     <TouchableOpacity
       onPress={() => handleEdit(list, idItem, nameList, dispatch)}

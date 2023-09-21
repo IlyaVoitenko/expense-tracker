@@ -17,6 +17,9 @@ import {
   faBowlFood,
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
+import { setIndexSelectedItemCategories } from "../../store/reducers/categories";
+import { setIndexSelectedItemBalance } from "../../store/reducers/userBalance";
+
 export const formatterСurrencyValue = (value) => {
   if (value) {
     const number = value.toString().split(".")[0];
@@ -104,8 +107,10 @@ export const handleEdit = (list, idItem, nameList, dispatch) => {
   const index = list.findIndex((item) => item.id === idItem);
   switch (nameList) {
     case "categories":
+      dispatch(setIndexSelectedItemCategories(index));
       break;
     case "userBalance":
+      dispatch(setIndexSelectedItemBalance(index));
       break;
     default:
       break;
