@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Text, View, TouchableOpacity } from "react-native";
 import {
   filterIconBtn,
@@ -6,7 +6,7 @@ import {
   handleEdit,
 } from "../../../utils/helpers";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { styles } from "./Styles";
 

@@ -1,7 +1,7 @@
 import React from "react";
 
-import ExpenseTracker from "../screens/ExpenseTracker ";
-import EditItem from "../screens/EditItem";
+import ExpenseTrackerScreen from "../screens/ExpenseTrackerScreen ";
+import EditItemScreen from "../screens/EditItemScreen";
 
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer } from "@react-navigation/native";
@@ -14,12 +14,12 @@ const Navigation = () => {
       <Stack.Navigator>
         <Stack.Screen
           name="ExpenseTracker"
-          component={ExpenseTracker}
+          component={ExpenseTrackerScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
           name="Item"
-          component={EditItem}
+          component={EditItemScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
