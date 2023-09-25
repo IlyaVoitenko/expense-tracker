@@ -119,6 +119,6 @@ export const handleEdit = (list, idItem, nameList, dispatch) => {
 export const handleGoBackNavigation = (navigation) => {
   return navigation.goBack();
 };
-export const handleSaveChangesSelectedItem = (navigation) => {
+export const handleSaveChangesSelectedItem = (dispatch, navigation) => {
   return handleGoBackNavigation(navigation);
 };
