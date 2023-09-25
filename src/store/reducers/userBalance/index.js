@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { userBalanceList } from "../../../utils/arrayUserBalance";
+
 const initialState = {
   userBalanceList: [...userBalanceList],
   indexSelectedItem: null,

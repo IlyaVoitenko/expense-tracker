@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { View } from "react-native";
 import Carousel from "react-native-snap-carousel";
 import { useSelector } from "react-redux";
@@ -9,7 +9,9 @@ import CarouselCardItem, {
 } from "./CarouselCardItem/CarouselCardItem";
 
 const CarouselCards = () => {
-  const isCarousel = React.useRef(null);
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const isCarousel = useRef(null);
   const listBalance = useSelector(userBalanceListSelectors);
   return (
     <View>
@@ -18,9 +20,14 @@ const CarouselCards = () => {
         layoutCardOffset={9}
         ref={isCarousel}
         data={listBalance}
-        renderItem={CarouselCardItem}
+        renderItem={({ item }) => {
+          return <CarouselCardItem item={item} activeSlide={activeSlide} />;
+        }}
         sliderWidth={SLIDER_WIDTH}
         itemWidth={ITEM_WIDTH}
+        onSnapToItem={(index) => {
+          setActiveSlide(index);
+        }}
         useScrollView={true}
       />
     </View>
