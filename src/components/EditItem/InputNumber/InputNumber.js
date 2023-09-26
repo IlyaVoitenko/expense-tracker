@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { View, TextInput } from "react-native";
 import { handleTextChange } from "../../../utils/helpers";
 import { style } from "./Styles";
+import { useDispatch } from "react-redux";
 
 const NumericInput = () => {
-  const [numbers, setNumbers] = useState(0);
+  const dispatch = useDispatch();
 
   return (
     <View style={style.container}>
       <TextInput
         style={style.input}
-        onChangeText={({ value }) => handleTextChange(setNumbers, value)}
-        value={numbers}
+        onChangeText={(text) => handleTextChange(dispatch, text)}
         placeholder="enter summa"
         keyboardType="numeric"
       />

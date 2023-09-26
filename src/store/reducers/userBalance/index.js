@@ -14,10 +14,10 @@ const userBalance = createSlice({
       state.indexSelectedItem = action.payload;
     },
     setAddBalance: (state, action) => {
-      state.userBalanceList[indexSelectedItem].summa += action.payload;
+      state.userBalanceList[state.indexSelectedItem].summa += action.payload;
     },
     setSubtractBalance: (state, action) => {
-      state.userBalanceList[indexSelectedItem].summa += action.payload;
+      state.userBalanceList[state.indexSelectedItem].summa -= action.payload;
     },
   },
 });

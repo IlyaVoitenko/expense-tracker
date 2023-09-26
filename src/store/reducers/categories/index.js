@@ -14,10 +14,10 @@ const categories = createSlice({
       state.indexSelectedItem = action.payload;
     },
     setAddBalanceCategorie: (state, action) => {
-      state.categoriesList[indexSelectedItem].summa += action.payload;
+      state.categoriesList[state.indexSelectedItem].summa += action.payload;
     },
     setSubtractBalanceCategorie: (state, action) => {
-      state.categoriesList[indexSelectedItem].summa += action.payload;
+      state.categoriesList[state.indexSelectedItem].summa += action.payload;
     },
   },
 });

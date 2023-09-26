@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   value: 0,
+  categorieOrBalanceUser: "",
 };
 
 const valueAccountСhangeSlice = createSlice({
@@ -11,7 +12,11 @@ const valueAccountСhangeSlice = createSlice({
     setValueAccountСhange: (state, action) => {
       state.value = action.payload;
     },
+    setCategorieOrBalanceUser: (state, action) => {
+      state.categorieOrBalanceUser = action.payload;
+    },
   },
 });
-export const { setValueAccountСhange } = valueAccountСhangeSlice.actions;
+export const { setValueAccountСhange, setCategorieOrBalanceUser } =
+  valueAccountСhangeSlice.actions;
 export default valueAccountСhangeSlice.reducer;

@@ -14,3 +14,5 @@ export const indexSelectedItemCategories = (state) =>
 //value
 export const valueAccountСhangeSelector = (state) =>
   state.valueAccountСhange.value;
+export const categorieOrBalanceUserSelector = (state) =>
+  state.valueAccountСhange.categorieOrBalanceUser;

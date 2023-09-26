@@ -17,9 +17,20 @@ import {
   faBowlFood,
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
-import { setIndexSelectedItemCategories } from "../../store/reducers/categories";
-import { setIndexSelectedItemBalance } from "../../store/reducers/userBalance";
 
+import {
+  setIndexSelectedItemCategories,
+  setAddBalanceCategorie,
+} from "../../store/reducers/categories";
+import {
+  setIndexSelectedItemBalance,
+  setAddBalance,
+  setSubtractBalance,
+} from "../../store/reducers/userBalance";
+import {
+  setCategorieOrBalanceUser,
+  setValueAccountСhange,
+} from "../../store/reducers/valueAccountСhange";
 export const formatterСurrencyValue = (value) => {
   if (value) {
     const number = value.toString().split(".")[0];
@@ -107,25 +118,40 @@ export const handleEdit = (list, idItem, nameList, dispatch) => {
   const index = list.findIndex((item) => item.id === idItem);
   switch (nameList) {
     case "categories":
+      dispatch(setCategorieOrBalanceUser(nameList));
       dispatch(setIndexSelectedItemCategories(index));
       break;
     case "userBalance":
+      dispatch(setCategorieOrBalanceUser(nameList));
       dispatch(setIndexSelectedItemBalance(index));
       break;
     default:
       break;
   }
 };
-export const handleGoBackNavigation = (navigation) => {
+export const handleClose = (dispatch, navigation) => {
+  dispatch(setValueAccountСhange(0));
   return navigation.goBack();
 };
-export const handleSaveChangesSelectedItem = (dispatch, navigation) => {
-  return handleGoBackNavigation(navigation);
-};
-export const handleTextChange = (setNumbers, newText) => {
-  const regex = /^[0-9]*$/;
-  const toNumber = newText;
-  if (regex.test(toNumber)) {
-    setNumbers(+newText);
+export const handleSaveChanges = (
+  dispatch,
+  nameList,
+  valueAccountСhange,
+  navigation
+) => {
+  const valueToNumber = +valueAccountСhange;
+  switch (nameList) {
+    case "categories":
+      dispatch(setSubtractBalance(valueToNumber));
+      dispatch(setAddBalanceCategorie(valueToNumber));
+      dispatch(setValueAccountСhange(0));
+      return navigation.goBack();
+    case "userBalance":
+      dispatch(setAddBalance(valueToNumber));
+      dispatch(setValueAccountСhange(0));
+      return navigation.goBack();
   }
+};
+export const handleTextChange = (dispatch, newText) => {
+  dispatch(setValueAccountСhange(newText));
 };
