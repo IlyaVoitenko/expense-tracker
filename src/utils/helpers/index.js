@@ -16,6 +16,8 @@ import {
   faFileInvoiceDollar,
   faBowlFood,
   faUtensils,
+  faHouseUser,
+  faHouse,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -80,6 +82,10 @@ export const filterIconBtn = (title) => {
       return faBowlFood;
     case "food outside":
       return faUtensils;
+    case "public utilities":
+      return faHouseUser;
+    case "housing rent":
+      return faHouse;
     default:
       break;
   }

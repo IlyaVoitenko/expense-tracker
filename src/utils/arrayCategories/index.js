@@ -16,4 +16,6 @@ export const categoriesList = [
   { id: uuid(), title: "taxs", summa: 0 },
   { id: uuid(), title: "food", summa: 0 },
   { id: uuid(), title: "food outside", summa: 0 },
+  { id: uuid(), title: "housing rent", summa: 0 },
+  { id: uuid(), title: "public utilities", summa: 0 },
 ];
