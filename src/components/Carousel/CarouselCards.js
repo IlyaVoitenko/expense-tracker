@@ -3,10 +3,7 @@ import { View, StyleSheet } from "react-native";
 import Carousel from "react-native-snap-carousel";
 import { useSelector } from "react-redux";
 import { userBalanceListSelectors } from "../../store/selectors";
-import CarouselCardItem, {
-  SLIDER_WIDTH,
-  ITEM_WIDTH,
-} from "./CarouselCardItem/CarouselCardItem";
+import CarouselCardItem from "./CarouselCardItem/CarouselCardItem";
 
 const CarouselCards = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -23,8 +20,8 @@ const CarouselCards = () => {
         renderItem={({ item }) => {
           return <CarouselCardItem item={item} activeSlide={activeSlide} />;
         }}
-        sliderWidth={SLIDER_WIDTH}
-        itemWidth={ITEM_WIDTH}
+        sliderWidth={250}
+        itemWidth={250}
         onSnapToItem={(index) => {
           setActiveSlide(index);
         }}

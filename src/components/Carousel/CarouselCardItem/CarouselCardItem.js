@@ -7,9 +7,6 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setIndexSelectedItemBalance } from "../../../store/reducers/userBalance";
 
-export const SLIDER_WIDTH = Dimensions.get("window").width + 50;
-export const ITEM_WIDTH = Math.round(SLIDER_WIDTH * 0.5);
-
 const CarouselCardItem = ({ item, activeSlide }) => {
   const { title, id } = item;
   const dispatch = useDispatch();

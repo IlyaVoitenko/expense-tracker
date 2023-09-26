@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { ITEM_WIDTH } from "./CarouselCardItem";
 
 export const styles = StyleSheet.create({
   container: {
@@ -8,7 +7,7 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "white",
     borderRadius: 8,
-    width: ITEM_WIDTH,
+    width: 250,
     height: 100,
     shadowColor: "#000",
     marginTop: 50,
