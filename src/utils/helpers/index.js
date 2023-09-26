@@ -122,3 +122,10 @@ export const handleGoBackNavigation = (navigation) => {
 export const handleSaveChangesSelectedItem = (dispatch, navigation) => {
   return handleGoBackNavigation(navigation);
 };
+export const handleTextChange = (setNumbers, newText) => {
+  const regex = /^[0-9]*$/;
+  const toNumber = newText;
+  if (regex.test(toNumber)) {
+    setNumbers(+newText);
+  }
+};

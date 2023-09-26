@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 import Carousel from "react-native-snap-carousel";
 import { useSelector } from "react-redux";
 import { userBalanceListSelectors } from "../../store/selectors";
@@ -14,7 +14,7 @@ const CarouselCards = () => {
   const isCarousel = useRef(null);
   const listBalance = useSelector(userBalanceListSelectors);
   return (
-    <View>
+    <View style={style.container}>
       <Carousel
         layout="tinder"
         layoutCardOffset={9}
@@ -33,5 +33,11 @@ const CarouselCards = () => {
     </View>
   );
 };
-
+const style = StyleSheet.create({
+  container: {
+    flex: 0,
+    backgroundColor: "yellow",
+    height: "25%",
+  },
+});
 export default CarouselCards;
