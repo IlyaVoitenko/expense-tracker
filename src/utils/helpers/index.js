@@ -1,26 +1,4 @@
 import {
-  faBuildingColumns,
-  faWallet,
-  faTrain,
-  faHandHoldingDollar,
-  faPhone,
-  faBook,
-  faCapsules,
-  faUserDoctor,
-  faPiggyBank,
-  faPlaneDeparture,
-  faPersonRifle,
-  faGamepad,
-  faShirt,
-  faCar,
-  faFileInvoiceDollar,
-  faBowlFood,
-  faUtensils,
-  faHouseUser,
-  faHouse,
-} from "@fortawesome/free-solid-svg-icons";
-
-import {
   setIndexSelectedItemCategories,
   setAddBalanceCategorie,
 } from "../../store/reducers/categories";
@@ -33,6 +11,8 @@ import {
   setCategorieOrBalanceUser,
   setValueAccountСhange,
 } from "../../store/reducers/valueAccountСhange";
+import { iconsFortawesome } from "../icons";
+
 export const formatterСurrencyValue = (value) => {
   if (value) {
     const number = value.toString().split(".")[0];
@@ -47,48 +27,7 @@ export const formatterСurrencyName = (value) => {
   return;
 };
 export const filterIconBtn = (title) => {
-  switch (title) {
-    case "bank account":
-      return faBuildingColumns;
-    case "wallet":
-      return faWallet;
-    case "transport":
-      return faTrain;
-    case "credit":
-      return faHandHoldingDollar;
-    case "phone":
-      return faPhone;
-    case "education":
-      return faBook;
-    case "medicines":
-      return faCapsules;
-    case "med insurance":
-      return faUserDoctor;
-    case "saving money":
-      return faPiggyBank;
-    case "travel":
-      return faPlaneDeparture;
-    case "UAF":
-      return faPersonRifle;
-    case "enjoyment":
-      return faGamepad;
-    case "shopping":
-      return faShirt;
-    case "auto":
-      return faCar;
-    case "taxs":
-      return faFileInvoiceDollar;
-    case "food":
-      return faBowlFood;
-    case "food outside":
-      return faUtensils;
-    case "public utilities":
-      return faHouseUser;
-    case "housing rent":
-      return faHouse;
-    default:
-      break;
-  }
+  return iconsFortawesome[title];
 };
 export const filterStyleBtn = (title) => {
   switch (title) {
